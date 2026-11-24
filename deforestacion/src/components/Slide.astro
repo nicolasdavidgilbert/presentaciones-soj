@@ -1,0 +1,27 @@
+---
+// Una diapositiva a pantalla completa.
+// layout: cover | contra | full | split | plain
+// rev: en "split", pone la imagen a la izquierda
+interface Props {
+  id: string;
+  img?: string;
+  layout?: 'cover' | 'contra' | 'full' | 'split' | 'plain';
+  rev?: boolean;
+  caption?: string;
+}
+const { id, img, layout = 'full', rev = false, caption } = Astro.props;
+---
+
+<section class:list={['slide', `l-${layout}`, { rev }]} id={id} aria-roledescription="diapositiva">
+  {
+    img && (
+      <div class="media">
+        <img src={`img/${img}.webp`} alt="" decoding="async" />
+        {caption && <span class="caption">{caption}</span>}
+      </div>
+    )
+  }
+  <div class="content">
+    <slot />
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+import type { SlideMeta } from '../data/slides';
+interface Props {
+  slides: SlideMeta[];
+}
+const { slides } = Astro.props;
+---
+
+<aside class="sidebar" aria-label="Miniaturas de las diapositivas">
+  <p class="side-title">Diapositivas</p>
+  <nav class="thumbs">
+    {
+      slides.map((s, i) => (
+        <button class="thumb" data-go={i} type="button" tabindex="-1">
+          <span class:list={['th-img', { rings: !s.img }]}>
+            {s.img && <img src={`img/t-${s.img}.webp`} alt="" loading="lazy" decoding="async" />}
+            <span class="th-n">{String(i + 1).padStart(2, '0')}</span>
+          </span>
+          <span class="th-t">{s.title}</span>
+        </button>
+      ))
+    }
+  </nav>
+</aside>

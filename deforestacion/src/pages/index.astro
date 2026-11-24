@@ -1,0 +1,394 @@
+---
+import Base from '../layouts/Base.astro';
+import Slide from '../components/Slide.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { slides, idx } from '../data/slides';
+
+const total = String(slides.length).padStart(2, '0');
+---
+
+<Base title="Retos ambientales y sociales · Los bosques">
+  <main class="deck">
+    <!-- ======================= PORTADA ======================= -->
+    <Slide id="portada" img="portada" layout="cover">
+      <p class="kicker a" style="--d:0">Sostenibilidad aplicada al sistema productivo · 2º ASIR</p>
+      <h1 class="a" style="--d:1">Retos ambientales y sociales <em>a los que se enfrenta la sociedad</em></h1>
+      <p class="lead a" style="--d:2">El caso de los bosques: deforestación, incendios y pérdida de biodiversidad</p>
+      <ul class="team a" style="--d:3">
+        <li>Nicolás David Gilbert González</li>
+        <li>Oleg Basov</li>
+        <li>Javier Maeso Abreu</li>
+        <li>Fabián Estévez García</li>
+        <li>Izan Rodríguez Pérez</li>
+      </ul>
+      <div class="scroll-hint a" style="--d:5"><i></i>Desliza o pulsa espacio</div>
+    </Slide>
+
+    <!-- ======================= ÍNDICE ======================= -->
+    <Slide id="indice" img="indice" layout="split" rev>
+      <p class="kicker a" style="--d:0">Índice</p>
+      <h2 class="a" style="--d:1">Lo que vamos a ver</h2>
+      <ol class="toc">
+        <li class="a" style="--d:2"><a href="#" data-go={idx('reto')}><span class="n">01</span><span class="t">El reto</span><span class="p">Javier</span></a></li>
+        <li class="a" style="--d:3"><a href="#" data-go={idx('causas')}><span class="n">02</span><span class="t">Causas</span><span class="p">Javier</span></a></li>
+        <li class="a" style="--d:4"><a href="#" data-go={idx('medio')}><span class="n">03</span><span class="t">Problemas que causa</span><span class="p">Nicolás</span></a></li>
+        <li class="a" style="--d:5"><a href="#" data-go={idx('espana')}><span class="n">04</span><span class="t">Datos</span><span class="p">Izan</span></a></li>
+        <li class="a" style="--d:6"><a href="#" data-go={idx('soluciones')}><span class="n">05</span><span class="t">Soluciones</span><span class="p">Oleg</span></a></li>
+        <li class="a" style="--d:7"><a href="#" data-go={idx('instituto')}><span class="n">06</span><span class="t">Propuestas para nuestro entorno</span><span class="p">Fabián</span></a></li>
+        <li class="a" style="--d:8"><a href="#" data-go={idx('conclusion')}><span class="n">07</span><span class="t">Conclusión</span><span class="p">Todos</span></a></li>
+        <li class="a" style="--d:9"><a href="#" data-go={idx('fuentes')}><span class="n">08</span><span class="t">Fuentes</span><span class="p"></span></a></li>
+      </ol>
+    </Slide>
+
+    <!-- ======================= 1. EL RETO ======================= -->
+    <Slide id="reto" img="reto" layout="split" rev caption="Laurisilva de Anaga, Tenerife">
+      <p class="kicker a" style="--d:0">01 · El reto</p>
+      <h2 class="a" style="--d:1">Un planeta que <em>pierde sus pulmones</em></h2>
+      <p class="lead a" style="--d:2">
+        Un reto ambiental es cualquier alteración que <strong>amenaza la salud, la estabilidad o la supervivencia</strong> de
+        los seres vivos. Es global, exige actuar ya y pone en riesgo la calidad de vida de hoy y de las generaciones futuras.
+      </p>
+      <ul class="rows">
+        <li class="a" style="--d:3"><b>Cambio climático</b><span>Calentamiento acelerado y clima alterado.</span></li>
+        <li class="a" style="--d:4"><b>Superpoblación</b><span>Alta densidad y desequilibrio territorial.</span></li>
+        <li class="a" style="--d:5"><b>Agua</b><span>Uso ineficiente y sobreexplotación del agua potable.</span></li>
+        <li class="a" style="--d:6"><b>Contaminación</b><span>Sustancias nocivas en el aire, el agua y el suelo.</span></li>
+        <li class="a focus" style="--d:7"><b>Deforestación</b><span>Destrucción de bosques, selvas y hábitats.</span></li>
+      </ul>
+    </Slide>
+
+    <!-- ======================= 2. CAUSAS ======================= -->
+    <Slide id="causas" img="causas" layout="full">
+      <p class="kicker a" style="--d:0">02 · Causas</p>
+      <h2 class="a" style="--d:1">El ser humano <em>acelera</em> el problema</h2>
+      <p class="lead a" style="--d:2">
+        Hay factores naturales, como los ciclos climáticos o los volcanes, pero son las <strong>causas humanas</strong> las que
+        agravan y aceleran la crisis.
+      </p>
+      <div class="cards">
+        <div class="card a" style="--d:3">
+          <span class="num">01</span>
+          <h3>Combustibles fósiles</h3>
+          <p>Desde la Revolución Industrial, el carbón, el petróleo y el gas liberan gases que atrapan el calor.</p>
+        </div>
+        <div class="card a" style="--d:4">
+          <span class="num">02</span>
+          <h3>Crecimiento demográfico</h3>
+          <p>Más población, más demanda de recursos. La agricultura consume cerca del <b>70&nbsp;%</b> del agua del mundo.</p>
+        </div>
+        <div class="card a" style="--d:5">
+          <span class="num">03</span>
+          <h3>Actividad económica</h3>
+          <p>Madera, papel, minería, urbanismo… y la ganadería extensiva, ligada al <b>80&nbsp;%</b> de la deforestación.</p>
+        </div>
+        <div class="card a" style="--d:6">
+          <span class="num">04</span>
+          <h3>Vertidos y «usar y tirar»</h3>
+          <p>Pesticidas, humos y plásticos que rompen el equilibrio de los ecosistemas.</p>
+        </div>
+      </div>
+    </Slide>
+
+    <!-- ======================= 3a. MEDIOAMBIENTE ======================= -->
+    <Slide id="medio" img="medio" layout="split">
+      <p class="kicker a" style="--d:0">03 · Problemas que causa</p>
+      <h2 class="a" style="--d:1">En el <em>medioambiente</em></h2>
+      <ul class="rows">
+        <li class="a" style="--d:2"><b>Pérdida de biodiversidad</b><span>Animales y plantas pierden su hábitat; muchas especies pueden extinguirse.</span></li>
+        <li class="a" style="--d:3"><b>Más cambio climático</b><span>Con menos árboles se absorbe menos CO₂.</span></li>
+        <li class="a" style="--d:4"><b>Erosión del suelo</b><span>Sin raíces que la sujeten, la lluvia y el viento arrastran la tierra.</span></li>
+        <li class="a" style="--d:5"><b>Ciclo del agua alterado</b><span>Menos humedad y menos lluvia: más sequías.</span></li>
+        <li class="a" style="--d:6"><b>Desertificación</b><span>Tierras fértiles que poco a poco se vuelven áridas.</span></li>
+      </ul>
+    </Slide>
+
+    <!-- ======================= 3b. PERSONAS ======================= -->
+    <Slide id="personas" img="personas" layout="full">
+      <p class="kicker a" style="--d:0">03 · Problemas que causa</p>
+      <h2 class="a" style="--d:1">En las <em>personas</em></h2>
+      <div class="cards c3">
+        <div class="card a" style="--d:2"><h3>Salud respiratoria</h3><p>El humo de los incendios y las partículas dañan las vías respiratorias.</p></div>
+        <div class="card a" style="--d:3"><h3>Menos agua potable</h3><p>Al alterarse el ciclo del agua, bajan las reservas aptas para el consumo.</p></div>
+        <div class="card a" style="--d:4"><h3>Alimentos en riesgo</h3><p>Los suelos degradados comprometen la agricultura y la ganadería.</p></div>
+        <div class="card a" style="--d:5"><h3>Comunidades desplazadas</h3><p>Poblaciones rurales e indígenas pierden su tierra y su sustento.</p></div>
+        <div class="card a" style="--d:6"><h3>Nuevas enfermedades</h3><p>Los hábitats fragmentados nos acercan a especies que transmiten infecciones.</p></div>
+        <div class="card a" style="--d:7"><h3>Menos bienestar</h3><p>Se deterioran los espacios naturales y nuestra calidad de vida.</p></div>
+      </div>
+    </Slide>
+
+    <!-- ======================= 3c. EMPRESAS ======================= -->
+    <Slide id="empresas" img="empresas" layout="split" rev caption="Bosque talado para plantar palma, Borneo">
+      <p class="kicker a" style="--d:0">03 · Problemas que causa</p>
+      <h2 class="a" style="--d:1">En las <em>empresas</em> y sectores productivos</h2>
+      <ul class="rows">
+        <li class="a" style="--d:2"><b>Agricultura</b><span>Suelo desgastado y sin nutrientes: cosechas mucho menores.</span></li>
+        <li class="a" style="--d:3"><b>Ganadería</b><span>Menos pastos y menos agua para el ganado.</span></li>
+        <li class="a" style="--d:4"><b>Papel y madera</b><span>La sobreexplotación agota su propia materia prima.</span></li>
+        <li class="a" style="--d:5"><b>Turismo</b><span>Paisajes degradados, destinos menos atractivos.</span></li>
+        <li class="a" style="--d:6"><b>Pesca</b><span>Los sedimentos arrastrados degradan ríos y mares.</span></li>
+        <li class="a" style="--d:7"><b>Sobrecostes</b><span>Más gasto en materias primas, agua y medidas correctoras.</span></li>
+      </ul>
+    </Slide>
+
+    <!-- ======================= 4a. DATOS ESPAÑA ======================= -->
+    <Slide id="espana" layout="plain">
+      <p class="kicker a" style="--d:0">04 · Datos</p>
+      <h2 class="a" style="--d:1">España: <em>el bosque cambia de cara</em></h2>
+      <div class="stats">
+        <div class="stat a" style="--d:2">
+          <span class="big"><span data-count="1900000">1.900.000</span><small>ha</small></span>
+          <p>de cubierta arbórea perdida entre 2001 y 2025, un <b>17&nbsp;%</b> menos que en el año 2000. Galicia (620.000 ha) y Castilla y León (360.000 ha), las más afectadas.</p>
+          <span class="src">Global Forest Watch</span>
+        </div>
+        <div class="stat green a" style="--d:3">
+          <span class="big"><span data-count="19.4" data-dec="1">19,4</span><small>M ha</small></span>
+          <p>de masa arbolada total. Se deforestan <b>3.700 ha</b> al año, pero se reforestan <b>7.700 ha</b>.</p>
+          <div class="bars">
+            <div class="bar"><span>Deforestación</span><i style="--w:0.48"></i></div>
+            <div class="bar up"><span>Reforestación</span><i style="--w:1"></i></div>
+          </div>
+          <span class="src">FAO · MITECO</span>
+        </div>
+        <div class="stat a" style="--d:4">
+          <span class="big"><span data-count="354746">354.746</span><small>ha</small></span>
+          <p>quemadas en 2025 en <b><span data-count="8199">8.199</span> incendios</b>.</p>
+          <span class="src">MITECO</span>
+        </div>
+        <div class="stat a" style="--d:5">
+          <span class="big"><span data-count="266420">266.420</span><small>ha</small></span>
+          <p>calcinadas en 2026, solo hasta septiembre.</p>
+          <span class="src">WWF España</span>
+        </div>
+      </div>
+    </Slide>
+
+    <!-- ======================= 4b. DATOS CANARIAS ======================= -->
+    <Slide id="canarias" img="datos" layout="split" caption="Incendio de Tenerife, agosto 2023 · Copernicus EMS">
+      <p class="kicker a" style="--d:0">04 · Datos</p>
+      <h2 class="a" style="--d:1">Canarias: <em>un territorio frágil</em></h2>
+      <div class="stats" style="grid-template-columns:1fr; gap:1.8rem;">
+        <div class="stat a" style="--d:2">
+          <span class="big"><span data-count="92.7" data-dec="1">92,7</span><small>%</small></span>
+          <p>del territorio canario ya es <b>zona árida</b>: el 97&nbsp;% en Las Palmas y el 87&nbsp;% en Santa Cruz de Tenerife.</p>
+          <span class="src">Atlas de la Desertificación en España · CSIC</span>
+        </div>
+        <div class="stat green a" style="--d:3">
+          <span class="big"><span data-count="112735">112.735</span><small>ha</small></span>
+          <p>de bosque. El <b>77&nbsp;%</b> está entre Tenerife y La Palma.</p>
+        </div>
+        <div class="stat a" style="--d:4">
+          <span class="big"><span data-count="14000">14.000</span><small>ha</small></span>
+          <p>arrasadas en el gran incendio de <b>Tenerife (2023)</b>, y 10.000 en Gran Canaria (2019). En 2025, en cambio, solo ardieron 98,1 ha.</p>
+          <span class="src">ISTAC</span>
+        </div>
+      </div>
+    </Slide>
+
+    <!-- ======================= 4c. CONTEXTO MUNDIAL ======================= -->
+    <Slide id="mundo" img="contra" layout="full">
+      <p class="kicker a" style="--d:0">04 · Datos · Contexto mundial</p>
+      <h2 class="a" style="--d:1">El mundo pierde bosque, <em>aunque más despacio</em></h2>
+      <div class="stats">
+        <div class="stat a" style="--d:2">
+          <span class="big"><span data-count="10.9" data-dec="1">10,9</span><small>M ha/año</small></span>
+          <p>deforestadas entre 2015 y 2025. Cada año, <b>una superficie mayor que Portugal</b>. En los años 90 eran 17,6 M ha.</p>
+        </div>
+        <div class="stat a" style="--d:3">
+          <span class="big"><span data-count="4.1" data-dec="1">4,1</span><small>M ha/año</small></span>
+          <p>de <b>pérdida neta</b>, después de descontar lo que se regenera o se planta.</p>
+        </div>
+        <div class="stat green a" style="--d:4">
+          <span class="big"><span data-count="32">32</span><small>%</small></span>
+          <p>de la tierra del planeta es bosque: unos <b>4.140 millones de hectáreas</b>.</p>
+        </div>
+        <div class="stat a" style="--d:5">
+          <span class="big">2030</span>
+          <p>Según la FAO, el mundo <b>no va camino</b> de cumplir los objetivos forestales fijados para esa fecha.</p>
+        </div>
+      </div>
+      <span class="src a" style="--d:6">FAO · Evaluación de los Recursos Forestales Mundiales 2025</span>
+    </Slide>
+
+    <!-- ======================= 5. SOLUCIONES ======================= -->
+    <Slide id="soluciones" img="soluciones" layout="full">
+      <p class="kicker a" style="--d:0">05 · Soluciones</p>
+      <h2 class="a" style="--d:1">Cada medida, <em>en las manos adecuadas</em></h2>
+      <div class="cards c3">
+        <div class="card a" style="--d:2">
+          <span class="tag">Conservación de recursos</span>
+          <h3>Proteger y replantar</h3>
+          <p>Más zonas protegidas y replantación con especies locales, como el pino canario.</p>
+          <div class="who"><span>Gobiernos</span></div>
+        </div>
+        <div class="card a" style="--d:3">
+          <span class="tag">Control de la contaminación</span>
+          <h3>Prevenir incendios</h3>
+          <p>Limpiar el monte, cortafuegos, vigilancia y sanciones. No hacer fuego y llamar al <b>112</b>.</p>
+          <div class="who"><span>Gobiernos</span><span>Cada persona</span></div>
+        </div>
+        <div class="card a" style="--d:4">
+          <span class="tag">Residuos</span>
+          <h3>Madera y papel con cabeza</h3>
+          <p>Reducir, reciclar y reutilizar. Exigir sellos como <b>FSC</b>.</p>
+          <div class="who"><span>Empresas</span><span>Cada persona</span></div>
+        </div>
+        <div class="card a" style="--d:5">
+          <span class="tag">Innovación</span>
+          <h3>Vigilar con tecnología</h3>
+          <p>Satélites y drones detectan talas e incendios. Global Forest Watch.</p>
+          <div class="who"><span>Gobiernos</span><span>Empresas</span></div>
+        </div>
+        <div class="card a" style="--d:6">
+          <span class="tag">Movilidad y energía</span>
+          <h3>Moverse y gastar mejor</h3>
+          <p>Guagua, bici o coche compartido, y ahorro de energía.</p>
+          <div class="who"><span>Gobiernos</span><span>Empresas</span><span>Cada persona</span></div>
+        </div>
+        <div class="card a" style="--d:7">
+          <span class="tag">Educación</span>
+          <h3>Enseñar y concienciar</h3>
+          <p>Talleres, voluntariado, plantar árboles y limpiar el monte.</p>
+          <div class="who"><span>Centros educativos</span><span>Gobiernos</span></div>
+        </div>
+      </div>
+    </Slide>
+
+    <!-- ======================= 6.1 INSTITUTO ======================= -->
+    <Slide id="instituto" img="instituto" layout="split">
+      <p class="kicker a" style="--d:0">06 · Nuestro entorno · En el instituto</p>
+      <h2 class="a" style="--d:1"><em>«</em>Una planta por alumno<em>»</em></h2>
+      <p class="lead a" style="--d:2">
+        Una <strong>asignatura obligatoria sobre la naturaleza</strong>: cómo dependemos de ella para tener agua, alimentos
+        y aire limpio, y cómo nuestras decisiones la protegen o la dañan.
+      </p>
+      <ol class="steps">
+        <li class="a" style="--d:3"><h3>Plantar</h3><p>Cada alumno planta y cuida una planta o un árbol pequeño, mejor si es autóctono.</p></li>
+        <li class="a" style="--d:4"><h3>Registrar</h3><p>Una ficha con riegos, cambios y dificultades, y turnos de cuidado en vacaciones.</p></li>
+        <li class="a" style="--d:5"><h3>Evaluar</h3><p>Se valoran la responsabilidad y lo aprendido, no solo que la planta sobreviva.</p></li>
+      </ol>
+      <div class="footline a" style="--d:6">Quién: <div class="who"><span>Consejería de Educación</span><span>Profesorado</span><span>Alumnado</span></div></div>
+    </Slide>
+
+    <!-- ======================= 6.2 BARRIO ======================= -->
+    <Slide id="barrio" img="barrio" layout="split" rev>
+      <p class="kicker a" style="--d:0">06 · Nuestro entorno · En el barrio</p>
+      <h2 class="a" style="--d:1"><em>«</em>Banco de objetos<em>»</em></h2>
+      <p class="lead a" style="--d:2">
+        Taladros, herramientas de jardín, juegos de mesa… cosas que usamos muy poco. <strong>¿Por qué no compartirlas?</strong>
+      </p>
+      <ol class="steps">
+        <li class="a" style="--d:3"><h3>Prestar</h3><p>Un local vecinal abre una tarde a la semana con objetos donados e inventariados.</p></li>
+        <li class="a" style="--d:4"><h3>Reparar</h3><p>Un taller al mes, con voluntarios, para hacer arreglos sencillos y seguros.</p></li>
+        <li class="a" style="--d:5"><h3>Medir</h3><p>Se registran los préstamos, las reparaciones y los objetos que se salvan de la basura.</p></li>
+      </ol>
+      <div class="footline a" style="--d:6">Quién: <div class="who"><span>Asociación vecinal</span><span>Ayuntamiento</span></div></div>
+    </Slide>
+
+    <!-- ======================= 6.3 TENERIFE ======================= -->
+    <Slide id="tenerife" img="tenerife" layout="split">
+      <p class="kicker a" style="--d:0">06 · Nuestro entorno · En Tenerife</p>
+      <h2 class="a" style="--d:1"><em>«</em>Paradas vivas<em>»</em></h2>
+      <p class="lead a" style="--d:2">
+        Un proyecto piloto para dar <strong>sombra y verde</strong> a <span class="hl">10 paradas de guagua</span> muy expuestas
+        al sol. Una mejora diaria que anima a usar el transporte público.
+      </p>
+      <ol class="steps">
+        <li class="a" style="--d:3"><h3>Seleccionar</h3><p>Según la exposición al sol, el número de usuarios y el espacio disponible.</p></li>
+        <li class="a" style="--d:4"><h3>Plantar</h3><p>Sombra y flora autóctona que necesite poca agua, sin estorbar en la acera ni a las personas con movilidad reducida.</p></li>
+        <li class="a" style="--d:5"><h3>Evaluar</h3><p>Un año de seguimiento. Si funciona, se amplía a más municipios.</p></li>
+      </ol>
+      <div class="footline a" style="--d:6">Quién: <div class="who"><span>Cabildo</span><span>Ayuntamientos</span><span>Transporte público</span></div></div>
+    </Slide>
+
+    <!-- ======================= 7. CONCLUSIÓN ======================= -->
+    <Slide id="conclusion" img="conclusion" layout="full" caption="Pino canario, La Palma">
+      <p class="kicker a" style="--d:0">07 · Conclusión</p>
+      <h2 class="a" style="--d:1">Nadie puede <em>solo</em></h2>
+      <div class="cards c3">
+        <div class="card a" style="--d:2">
+          <span class="num">01</span>
+          <h3>Es un problema cercano</h3>
+          <p>No pasa solo en el Amazonas: lo vemos en los incendios y en la aridez de nuestras propias islas.</p>
+        </div>
+        <div class="card a" style="--d:3">
+          <span class="num">02</span>
+          <h3>Las causas son humanas…</h3>
+          <p>…y por eso las soluciones también están en nuestras manos.</p>
+        </div>
+        <div class="card a" style="--d:4">
+          <span class="num">03</span>
+          <h3>Cada uno tiene su parte</h3>
+          <p>Gobiernos que legislan y vigilan, empresas que eligen qué compran y producen, centros que educan y personas que deciden cómo viven.</p>
+        </div>
+      </div>
+      <p class="quote a" style="--d:5">
+        El pino canario rebrota después del fuego, pero si los incendios se repiten una y otra vez, deja de hacerlo.
+        El bosque se recupera solo si le damos tiempo.
+      </p>
+    </Slide>
+
+    <!-- ======================= 8. FUENTES ======================= -->
+    <Slide id="fuentes" layout="plain">
+      <p class="kicker a" style="--d:0">08 · Fuentes consultadas</p>
+      <div class="sources">
+        <div class="a" style="--d:1">
+          <h3>Datos</h3>
+          <ul>
+            <li><b>Global Forest Watch</b>: panel de España, pérdida de cubierta arbórea 2001–2025</li>
+            <li><b>EpData</b>: situación de los bosques en España y en el mundo</li>
+            <li><b>FAO</b>: Evaluación de los Recursos Forestales Mundiales (FRA 2025)</li>
+            <li><b>MITECO</b>: Inventario Forestal y estadística de incendios forestales 2025</li>
+            <li><b>WWF España</b>: balance de incendios 2026</li>
+            <li><b>CSIC</b>: Atlas de la Desertificación en España</li>
+            <li><b>ISTAC</b>: Instituto Canario de Estadística, superficie forestal e incendios</li>
+            <li><b>MITECO · Parques Nacionales</b>: el pino canario y su respuesta al fuego</li>
+          </ul>
+        </div>
+        <div class="a" style="--d:2">
+          <h3>Imágenes (Wikimedia Commons)</h3>
+          <ul>
+            <li>Portada: campaña <b>WWF</b> «Before it's too late»</li>
+            <li>Corona Forestal: <b>FrDr</b>, CC BY 4.0 · Laurisilva de Anaga: <b>Josefir Instantes</b>, CC BY-SA 4.0</li>
+            <li>Suelo agrietado: <b>o_andras</b>, CC BY-SA 4.0 · Borneo: <b>T. R. Shankar Raman</b>, CC BY-SA 4.0</li>
+            <li>Incendio de Tenerife: <b>Copernicus EMS</b>, Unión Europea</li>
+            <li>Guagua TITSA: <b>Cs-wolves</b>, CC BY-SA 4.0 · Pino canario: <b>Frank Vincentz</b>, CC BY-SA 3.0</li>
+            <li>Pinar: <b>S. Rae</b>, CC BY 2.0 · Herramientas: CC0</li>
+            <li>Tala, plantación, huerto escolar: <b>US Forest Service</b> · Humo: <b>CAL FIRE</b> (dominio público)</li>
+          </ul>
+        </div>
+      </div>
+    </Slide>
+
+    <!-- ======================= CONTRAPORTADA ======================= -->
+    <Slide id="contra" img="portada" layout="contra">
+      <div>
+        <p class="kicker a" style="--d:0; justify-content:center">Retos ambientales y sociales</p>
+        <h1 class="a" style="--d:1; margin: 1.2rem auto 0; max-width: 16ch;">Cada árbol <em>cuenta</em></h1>
+        <p class="lead a" style="--d:2; margin: 1.2rem auto 0;">
+          Lo que no cuidemos hoy no estará mañana. Empieza por una planta, una parada de guagua o un objeto compartido.
+        </p>
+      </div>
+      <div class="a" style="--d:3; display:grid; gap:1rem; justify-items:center;">
+        <ul class="team" style="justify-content:center">
+          <li>Nicolás David Gilbert González</li>
+          <li>Oleg Basov</li>
+          <li>Javier Maeso Abreu</li>
+          <li>Fabián Estévez García</li>
+          <li>Izan Rodríguez Pérez</li>
+        </ul>
+        <div class="meta" style="justify-content:center">
+          <span>Sostenibilidad aplicada al sistema productivo</span><span>2º ASIR</span><span>Curso 2025–2026</span>
+        </div>
+      </div>
+    </Slide>
+  </main>
+
+  <Sidebar slides={slides} />
+  <div class="edge-hint" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="counter"><b>01</b> / {total}</div>
+</Base>
+
+<script>
+  import '../scripts/deck';
+</script>

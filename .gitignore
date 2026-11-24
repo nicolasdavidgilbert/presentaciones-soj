@@ -1,0 +1,6 @@
+# Dependencias (se reinstalan con: pnpm install)
+node_modules/
+.astro/
+
+# El zip duplica dist/
+*.zip
