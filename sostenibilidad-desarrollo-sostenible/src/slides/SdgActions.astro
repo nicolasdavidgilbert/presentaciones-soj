@@ -1,0 +1,26 @@
+---
+import Slide from '../components/presentation/Slide.astro';
+import { sdgs } from '../data/content';
+---
+
+<Slide theme="forest" title="9. Acciones para cada ODS" frame={false}>
+  <div class="absolute inset-17.5 grid grid-cols-6 grid-rows-3 gap-3.5">
+    <header class="flex flex-col justify-center pr-2.5">
+      <p class="kicker text-[17px]" data-a="fade">09 · En el trabajo</p>
+      <h2 class="title text-[54px] mt-3" data-a="words">Pequeñas acciones para <em>cada ODS</em></h2>
+    </header>
+    {sdgs.map((s) => (
+      <article
+        class="sdg relative rounded-[18px] p-5.5 flex flex-col text-white overflow-hidden"
+        style={`background:${s.color}`}
+        data-a="tile"
+      >
+        <div class="flex items-start gap-3">
+          <span class="font-display text-[60px] leading-[0.85]">{s.n}</span>
+          <h3 class="font-sans font-extrabold uppercase text-[16px] leading-[1.15] tracking-[0.02em] mt-1">{s.name}</h3>
+        </div>
+        <p class="mt-auto text-[18.5px] leading-[1.35] font-medium">{s.action}</p>
+      </article>
+    ))}
+  </div>
+</Slide>

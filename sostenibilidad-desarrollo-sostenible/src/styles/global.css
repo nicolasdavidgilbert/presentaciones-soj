@@ -1,0 +1,163 @@
+@import "@fontsource/anton/latin.css";
+@import "@fontsource/anton/latin-ext.css";
+@import "@fontsource/instrument-serif/latin.css";
+@import "@fontsource/instrument-serif/latin-ext.css";
+@import "@fontsource/instrument-serif/latin-italic.css";
+@import "@fontsource-variable/inter";
+@import "tailwindcss";
+@import "./transitions.css";
+
+@theme {
+  --color-forest: #245c3f;
+  --color-forest-deep: #153a27;
+  --color-forest-night: #0d261a;
+  --color-paper: #ece8de;
+  --color-paper-dim: #ddd8ca;
+  --color-ink: #1c4730;
+  --color-leaf: #a8d5a2;
+  --color-sun: #e3c169;
+
+  --font-display: "Anton", "Impact", sans-serif;
+  --font-serif: "Instrument Serif", "Georgia", serif;
+  --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
+}
+
+:root {
+  /* Lienzo de diseño 16:9; el escenario se escala para ocupar la pantalla */
+  --stage-w: 1920px;
+  --stage-h: 1080px;
+  --stage-scale: 1;
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-forest-night);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+#scene {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.stage {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: var(--stage-w);
+  height: var(--stage-h);
+  transform: translate(-50%, -50%) scale(var(--stage-scale));
+  transform-origin: center center;
+  z-index: 1;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.slide.is-active {
+  visibility: visible;
+}
+
+/* Fondos: pizarra verde y papel crema, con grano generado en SVG (sin red) */
+.slide[data-theme="forest"] {
+  background:
+    radial-gradient(120% 90% at 20% 10%, #2e6d4b 0%, transparent 60%),
+    radial-gradient(90% 80% at 90% 100%, #123423 0%, transparent 70%),
+    var(--color-forest);
+  color: var(--color-paper);
+}
+
+.slide[data-theme="paper"] {
+  background:
+    radial-gradient(110% 90% at 80% 0%, #f6f3eb 0%, transparent 60%),
+    radial-gradient(90% 80% at 0% 100%, #d6d1c1 0%, transparent 70%),
+    var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* Las diapositivas «space» dejan ver la escena 3D */
+.slide[data-theme="space"] {
+  background: radial-gradient(80% 80% at 30% 50%, rgba(36, 92, 63, 0.35), transparent 70%);
+  color: var(--color-paper);
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Marco interior, como en la presentación original */
+.slide .frame {
+  position: absolute;
+  inset: 34px;
+  border: 2px solid currentColor;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.slide .frame::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid currentColor;
+  opacity: 0.5;
+}
+
+.kicker {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--accent, inherit);
+}
+
+.slide[data-theme="forest"],
+.slide[data-theme="space"] {
+  --accent: var(--color-leaf);
+}
+
+.slide[data-theme="paper"] {
+  --accent: var(--color-forest);
+}
+
+.card {
+  border-radius: 22px;
+  border: 1.5px solid color-mix(in oklab, currentColor 22%, transparent);
+  background: color-mix(in oklab, currentColor 6%, transparent);
+}
+
+.slide[data-theme="paper"] .card {
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 20px 50px -30px rgba(21, 58, 39, 0.45);
+}

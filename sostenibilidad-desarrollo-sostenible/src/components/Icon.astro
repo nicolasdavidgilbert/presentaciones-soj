@@ -1,0 +1,32 @@
+---
+// Renderiza un icono de Lucide como SVG en tiempo de compilación (sin JS en el cliente).
+import type { IconNode } from 'lucide';
+
+interface Props {
+  icon: IconNode;
+  size?: number;
+  stroke?: number;
+  class?: string;
+}
+
+const { icon, size = 24, stroke = 1.75, class: className } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width={stroke}
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  class={className}
+>
+  {icon.map(([tag, attrs]) => {
+    const Tag = tag as any;
+    return <Tag {...attrs} />;
+  })}
+</svg>

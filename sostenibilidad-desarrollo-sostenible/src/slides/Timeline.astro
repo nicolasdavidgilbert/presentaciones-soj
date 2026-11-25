@@ -1,0 +1,31 @@
+---
+import Slide from '../components/presentation/Slide.astro';
+import { timeline } from '../data/content';
+---
+
+<Slide theme="forest" title="3. Línea del tiempo">
+  <div class="absolute inset-37.5 flex flex-col">
+    <p class="kicker" data-a="fade">03 · Evolución</p>
+    <h2 class="title text-[84px] mt-4" data-a="words">Cómo creció el interés por <em>el desarrollo sostenible</em></h2>
+
+    <div class="relative mt-auto mb-2.5 h-130">
+      <div class="absolute left-0 right-0 top-65 h-0.75 bg-paper/40 origin-left" data-a="line"></div>
+      <ol class="absolute inset-0 grid grid-cols-7">
+        {timeline.map((t, i) => {
+          const up = i % 2 === 0;
+          return (
+            <li class="relative" data-a={up ? 'down' : 'up'}>
+              <span class="absolute left-4.5 top-62.25 size-6.25 rounded-full bg-leaf ring-8 ring-forest"></span>
+              <span class:list={['absolute left-7.5 w-0.5 bg-paper/35', up ? 'top-47.5 h-15' : 'top-68.5 h-6.5']}></span>
+              <div class:list={['absolute left-4.5 w-75', up ? 'top-0' : 'top-75']}>
+                <p class="font-display text-[40px] text-sun leading-none">{t.date}</p>
+                <p class="font-serif text-[34px] mt-2 leading-none">{t.title}</p>
+                <p class="text-[19px] leading-snug mt-2.5 opacity-80 w-61.25">{t.text}</p>
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+    </div>
+  </div>
+</Slide>

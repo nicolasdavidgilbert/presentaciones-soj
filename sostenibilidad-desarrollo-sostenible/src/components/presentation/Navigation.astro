@@ -1,0 +1,35 @@
+---
+import Icon from '../Icon.astro';
+import { ChevronLeft, ChevronRight, Maximize, Keyboard, LayoutGrid } from 'lucide';
+---
+
+<nav class="nav" aria-label="Navegación de la presentación">
+  <button type="button" data-nav="overview" aria-label="Todas las diapositivas (G)">
+    <Icon icon={LayoutGrid} size={16} />
+  </button>
+  <button type="button" data-nav="prev" aria-label="Diapositiva anterior">
+    <Icon icon={ChevronLeft} size={18} />
+  </button>
+  <span class="nav__count" data-counter aria-live="polite">1 / 1</span>
+  <button type="button" data-nav="next" aria-label="Diapositiva siguiente">
+    <Icon icon={ChevronRight} size={18} />
+  </button>
+  <button type="button" data-nav="fullscreen" aria-label="Pantalla completa (F)">
+    <Icon icon={Maximize} size={16} />
+  </button>
+  <button type="button" data-nav="help" aria-label="Atajos de teclado (?)">
+    <Icon icon={Keyboard} size={16} />
+  </button>
+</nav>
+
+<div class="help" data-help role="dialog" aria-modal="true" aria-label="Atajos de teclado">
+  <dl>
+    <dt><kbd>→</kbd> <kbd>Espacio</kbd> <kbd>AvPág</kbd></dt><dd>Siguiente</dd>
+    <dt><kbd>←</kbd> <kbd>RePág</kbd></dt><dd>Anterior</dd>
+    <dt><kbd>Inicio</kbd> <kbd>Fin</kbd></dt><dd>Primera / última</dd>
+    <dt><kbd>1</kbd>…<kbd>9</kbd> + <kbd>Intro</kbd></dt><dd>Ir a la diapositiva</dd>
+    <dt><kbd>G</kbd> / borde izquierdo</dt><dd>Miniaturas de todas las diapositivas</dd>
+    <dt><kbd>F</kbd></dt><dd>Pantalla completa</dd>
+    <dt><kbd>?</kbd> <kbd>Esc</kbd></dt><dd>Mostrar / cerrar ayuda</dd>
+  </dl>
+</div>

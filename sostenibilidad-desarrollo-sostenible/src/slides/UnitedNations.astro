@@ -1,0 +1,32 @@
+---
+import Slide from '../components/presentation/Slide.astro';
+import Icon from '../components/Icon.astro';
+import { Globe, Landmark, ScrollText } from 'lucide';
+import { unReasons } from '../data/content';
+
+const icons = [Globe, Landmark, ScrollText];
+---
+
+<Slide theme="paper" title="4. La ONU">
+  <div class="absolute inset-37.5 flex gap-25">
+    <div class="w-175 shrink-0 flex flex-col justify-center">
+      <p class="kicker" data-a="fade">04 · Naciones Unidas</p>
+      <h2 class="title text-[88px] mt-4" data-a="words">¿Por qué la ONU es el <em>único lugar</em> donde todas las naciones pueden reunirse?</h2>
+      <div class="mt-12.5 flex items-end gap-6.5" data-a="scale">
+        <span class="font-display text-[210px] leading-[0.8] text-forest" data-count="193">193</span>
+        <span class="font-serif text-[40px] leading-tight pb-1.5">Estados<br />miembros</span>
+      </div>
+    </div>
+    <ol class="flex-1 flex flex-col justify-center gap-7.5">
+      {unReasons.map((r, i) => (
+        <li class="card p-9.5 flex gap-7.5" data-a="right">
+          <span class="grid place-items-center size-19.5 shrink-0 rounded-full bg-forest text-paper"><Icon icon={icons[i]} size={38} /></span>
+          <div>
+            <h3 class="font-serif text-[46px] leading-none">{i + 1}. {r.title}</h3>
+            <p class="text-[23px] leading-[1.45] mt-3.5 opacity-85">{r.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</Slide>

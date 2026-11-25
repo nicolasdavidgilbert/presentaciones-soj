@@ -1,0 +1,51 @@
+---
+import Slide from '../components/presentation/Slide.astro';
+import Icon from '../components/Icon.astro';
+import { Earth, MapPin, Lightbulb } from 'lucide';
+---
+
+<Slide theme="paper" title="8. ¿Son alcanzables los ODS?">
+  <div class="absolute inset-37.5 flex gap-22.5">
+    <div class="w-160 shrink-0 flex flex-col">
+      <p class="kicker" data-a="fade">08 · Análisis y reflexión</p>
+      <h2 class="title text-[96px] mt-4" data-a="words">¿Son las metas de los ODS <em>fácilmente alcanzables?</em></h2>
+      <div class="flex gap-12.5 mt-auto">
+        <div data-a="scale">
+          <p class="font-display text-[170px] leading-[0.85] text-forest" data-count="17">17</p>
+          <p class="font-serif text-[36px]">objetivos</p>
+        </div>
+        <div data-a="scale">
+          <p class="font-display text-[170px] leading-[0.85] text-forest" data-count="169">169</p>
+          <p class="font-serif text-[36px]">metas integradas</p>
+        </div>
+      </div>
+      <p class="text-[23px] leading-[1.45] mt-6.5 opacity-85" data-a="fade">
+        La Agenda 2030 es el mayor reto actual: lo que se hace en un área repercute directamente en las demás.
+      </p>
+    </div>
+
+    <div class="flex-1 flex flex-col gap-6.5 justify-center">
+      <div class="grid grid-cols-2 gap-6.5">
+        <article class="card p-9" data-a="up">
+          <div class="flex items-center gap-4"><Icon icon={Earth} size={38} class="text-forest" /><h3 class="font-serif text-[44px] leading-none">Nivel mundial</h3></div>
+          <p class="font-display text-[30px] uppercase tracking-wide text-[#b2452f] mt-4">Más difícil</p>
+          <p class="text-[22px] leading-[1.45] mt-2.5 opacity-85">Cada país es soberano sobre sus recursos y economía y afronta realidades distintas: coordinar gobiernos, empresas y sociedades no es fácil.</p>
+        </article>
+        <article class="card p-9" data-a="up">
+          <div class="flex items-center gap-4"><Icon icon={MapPin} size={38} class="text-forest" /><h3 class="font-serif text-[44px] leading-none">Nivel local</h3></div>
+          <p class="font-display text-[30px] uppercase tracking-wide text-forest mt-4">Más factible</p>
+          <p class="text-[22px] leading-[1.45] mt-2.5 opacity-85">Aquí se avanza y se ven resultados, con la implicación de administraciones locales, empresas comunitarias y cada persona en su día a día.</p>
+        </article>
+      </div>
+      <article class="rounded-[22px] bg-forest text-paper p-10 flex gap-7" data-a="up">
+        <Icon icon={Lightbulb} size={46} class="text-sun shrink-0" />
+        <div>
+          <h3 class="font-serif italic text-[42px] leading-none text-leaf">Nuestra conclusión</h3>
+          <p class="text-[24px] leading-[1.45] mt-3.5">
+            No son alcanzables a corto plazo sin colaboración: <strong>gobiernos</strong> con normas adecuadas, <strong>empresas</strong> con criterios ASG y <strong>ciudadanos</strong> que actúen con conciencia.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</Slide>

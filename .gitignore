@@ -1,0 +1,7 @@
+# Dependencias (se reinstalan con: npm install)
+node_modules/
+.astro/
+
+# Secretos y configuración local
+.env*
+.vercel/

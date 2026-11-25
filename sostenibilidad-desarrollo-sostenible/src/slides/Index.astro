@@ -1,0 +1,30 @@
+---
+import Slide from '../components/presentation/Slide.astro';
+import { index } from '../data/content';
+---
+
+<Slide theme="paper" title="Índice">
+  <div class="absolute inset-37.5 flex gap-27.5">
+    <header class="w-130 shrink-0 flex flex-col justify-center">
+      <p class="kicker" data-a="fade">Contenido</p>
+      <h2 class="title text-[170px] mt-5" data-a="words">Índice</h2>
+      <p class="font-serif italic text-[36px] leading-snug mt-7.5 opacity-80" data-a="up">
+        Nueve preguntas para entender por qué el desarrollo sostenible nos concierne a todos.
+      </p>
+    </header>
+    <ol class="flex-1 grid grid-cols-1 content-center gap-1.5">
+      {index.map((item, i) => (
+        <li data-a="left">
+          <a
+            href={`#${i + 3}`}
+            data-goto={i + 2}
+            class="group flex items-baseline gap-7 py-3 border-b border-ink/20 hover:border-ink/70 transition-colors"
+          >
+            <span class="font-display text-[34px] text-forest/60 w-14 tabular-nums">{String(i + 1).padStart(2, '0')}</span>
+            <span class="font-serif text-[46px] leading-none group-hover:translate-x-2.5 transition-transform">{item}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </div>
+</Slide>

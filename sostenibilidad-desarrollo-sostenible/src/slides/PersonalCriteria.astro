@@ -1,0 +1,33 @@
+---
+import Slide from '../components/presentation/Slide.astro';
+import Icon from '../components/Icon.astro';
+import { Server, ShieldCheck, Scale } from 'lucide';
+import { esgPersonal } from '../data/content';
+
+const icons = [Server, ShieldCheck, Scale];
+---
+
+<Slide theme="forest" title="7. Los criterios ASG en mi vida">
+  <div class="absolute inset-37.5 flex flex-col">
+    <p class="kicker" data-a="fade">07 · Aplicación personal</p>
+    <h2 class="title text-[88px] mt-4" data-a="words">ASG desde el puesto de <em>un estudiante de ASIR</em></h2>
+    <div class="flex flex-col gap-6.5 mt-auto">
+      {esgPersonal.map((c, i) => (
+        <article class="card grid grid-cols-[120px_1fr_1.25fr] items-center gap-11 p-8 pl-10" data-a="left">
+          <span class="font-display text-[110px] leading-none text-leaf text-center">{c.letter}</span>
+          <div>
+            <p class="text-[16px] font-bold tracking-[0.2em] uppercase opacity-60">Cómo cumplirlo</p>
+            <p class="font-serif text-[34px] leading-[1.15] mt-2">{c.how}</p>
+          </div>
+          <div class="flex gap-5.5 border-l border-paper/25 pl-10">
+            <Icon icon={icons[i]} size={38} class="text-sun shrink-0 mt-1" />
+            <div>
+              <p class="text-[16px] font-bold tracking-[0.2em] uppercase text-sun">Ejemplo</p>
+              <p class="text-[22px] leading-[1.45] mt-2 opacity-90">{c.example}</p>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Slide>

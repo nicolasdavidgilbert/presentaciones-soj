@@ -1,0 +1,32 @@
+---
+import Slide from '../components/presentation/Slide.astro';
+import { esgCompany } from '../data/content';
+---
+
+<Slide theme="paper" title="6. Criterios ASG en la empresa">
+  <div class="absolute inset-37.5 flex flex-col">
+    <div class="flex items-end justify-between gap-20">
+      <div>
+        <p class="kicker" data-a="fade">06 · Empresas</p>
+        <h2 class="title text-[100px] mt-4" data-a="words">Los criterios <em>ASG</em></h2>
+      </div>
+      <p class="w-190 text-[26px] leading-[1.45] opacity-85 pb-2.5" data-a="fade">
+        Normas y principios que evalúan el impacto de la actividad empresarial <strong>más allá del rendimiento financiero</strong>.
+      </p>
+    </div>
+    <div class="grid grid-cols-3 gap-11 mt-auto">
+      {esgCompany.map((c) => (
+        <article class="card relative overflow-hidden p-11 pt-9" data-a="up">
+          <span class="absolute -right-2.5 -top-15 font-display text-[300px] leading-none text-forest/10" aria-hidden="true">{c.letter}</span>
+          <p class="font-display text-[90px] leading-none text-forest">{c.letter}</p>
+          <h3 class="font-serif text-[52px] leading-none mt-1.5">{c.name}</h3>
+          <p class="text-[23px] leading-[1.45] mt-5 opacity-85">{c.text}</p>
+          <div class="mt-6.5 rounded-2xl bg-forest text-paper p-6">
+            <p class="text-[16px] font-bold tracking-[0.2em] uppercase text-leaf">Ejemplo</p>
+            <p class="text-[21px] leading-[1.45] mt-2">{c.example}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Slide>

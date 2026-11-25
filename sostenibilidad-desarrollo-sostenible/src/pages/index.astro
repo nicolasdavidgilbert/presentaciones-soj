@@ -1,0 +1,31 @@
+---
+import PresentationLayout from '../layouts/PresentationLayout.astro';
+import Intro from '../slides/Intro.astro';
+import Index from '../slides/Index.astro';
+import Definitions from '../slides/Definitions.astro';
+import Pillars from '../slides/Pillars.astro';
+import Timeline from '../slides/Timeline.astro';
+import UnitedNations from '../slides/UnitedNations.astro';
+import SecretaryGeneral from '../slides/SecretaryGeneral.astro';
+import CompanyCriteria from '../slides/CompanyCriteria.astro';
+import PersonalCriteria from '../slides/PersonalCriteria.astro';
+import SdgAnalysis from '../slides/SdgAnalysis.astro';
+import SdgActions from '../slides/SdgActions.astro';
+import Conclusion from '../slides/Conclusion.astro';
+import { meta } from '../data/content';
+---
+
+<PresentationLayout title={meta.title}>
+  <Intro />
+  <Index />
+  <Definitions />
+  <Pillars />
+  <Timeline />
+  <UnitedNations />
+  <SecretaryGeneral />
+  <CompanyCriteria />
+  <PersonalCriteria />
+  <SdgAnalysis />
+  <SdgActions />
+  <Conclusion />
+</PresentationLayout>

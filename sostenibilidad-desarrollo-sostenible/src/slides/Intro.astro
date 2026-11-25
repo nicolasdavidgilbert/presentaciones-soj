@@ -1,0 +1,18 @@
+---
+import Slide from '../components/presentation/Slide.astro';
+import { meta } from '../data/content';
+---
+
+<Slide theme="space" scene="cover" title="Portada">
+  <div class="absolute left-37.5 top-37.5 bottom-37.5 w-250 flex flex-col justify-center">
+    <p class="kicker text-leaf" data-a="fade">{meta.subject}</p>
+    <h1 class="font-display uppercase text-[150px] leading-[0.92] mt-8.5 tracking-[0.005em]" data-a="words">
+      Sostenibilidad y desarrollo <span class="text-leaf">sostenible</span>
+    </h1>
+    <div class="h-0.75 w-65 bg-sun mt-12.5 origin-left" data-a="line"></div>
+    <ul class="mt-11 grid grid-cols-2 gap-x-12 gap-y-2.5 font-serif text-[38px] leading-tight w-225">
+      {meta.authors.map((a) => <li data-a="up">{a}</li>)}
+    </ul>
+    <p class="mt-10 text-[22px] font-semibold tracking-[0.2em] uppercase opacity-70" data-a="fade">{meta.course}</p>
+  </div>
+</Slide>

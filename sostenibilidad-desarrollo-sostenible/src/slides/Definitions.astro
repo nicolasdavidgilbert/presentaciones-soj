@@ -1,0 +1,35 @@
+---
+import Slide from '../components/presentation/Slide.astro';
+import Icon from '../components/Icon.astro';
+import { Scale, Sprout } from 'lucide';
+---
+
+<Slide theme="forest" title="1. Definiciones">
+  <div class="absolute inset-37.5 flex flex-col">
+    <p class="kicker" data-a="fade">01 · Conceptos</p>
+    <h2 class="title text-[110px] mt-4" data-a="words">
+      Sostenibilidad y <em>desarrollo sostenible</em>
+    </h2>
+    <div class="grid grid-cols-2 gap-15 mt-auto">
+      <article class="card p-13" data-a="up">
+        <div class="flex items-center gap-5.5">
+          <span class="grid place-items-center size-19 rounded-full bg-leaf text-forest-deep"><Icon icon={Scale} size={40} /></span>
+          <h3 class="font-serif text-[58px]">Sostenibilidad</h3>
+        </div>
+        <p class="mt-7 text-[29px] leading-[1.45] opacity-90">
+          El <strong class="text-leaf font-semibold">principio rector</strong>: un equilibrio indivisible entre crecimiento económico, bienestar social y medioambiente (y también la dimensión política) para que nuestras decisiones no comprometan los recursos de las futuras generaciones.
+        </p>
+      </article>
+      <article class="card p-13" data-a="up">
+        <div class="flex items-center gap-5.5">
+          <span class="grid place-items-center size-19 rounded-full bg-sun text-forest-deep"><Icon icon={Sprout} size={40} /></span>
+          <h3 class="font-serif text-[58px]">Desarrollo sostenible</h3>
+        </div>
+        <p class="mt-7 text-[29px] leading-[1.45] opacity-90">
+          La <strong class="text-sun font-semibold">puesta en práctica</strong>: un modelo de progreso que usa los recursos con moderación, respetando sus tiempos de renovación, para cubrir las necesidades actuales sin poner en peligro las del mañana.
+        </p>
+        <p class="mt-6 text-[22px] tracking-[0.12em] uppercase opacity-60">Impulsado en 1987 · «Nuestro futuro común», ONU</p>
+      </article>
+    </div>
+  </div>
+</Slide>

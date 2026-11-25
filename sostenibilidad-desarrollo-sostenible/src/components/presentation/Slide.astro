@@ -1,0 +1,25 @@
+---
+interface Props {
+  /** forest = pizarra verde, paper = papel crema, space = transparente sobre la escena 3D */
+  theme?: 'forest' | 'paper' | 'space';
+  /** Preajuste de cámara de la escena 3D para esta diapositiva */
+  scene?: 'cover' | 'outro' | 'hidden';
+  title: string;
+  frame?: boolean;
+  class?: string;
+}
+
+const { theme = 'paper', scene = 'hidden', title, frame = true, class: className } = Astro.props;
+---
+
+<section
+  class:list={['slide', className]}
+  data-theme={theme}
+  data-scene={scene}
+  data-title={title}
+  aria-label={title}
+  aria-roledescription="diapositiva"
+>
+  {frame && <div class="frame" aria-hidden="true" />}
+  <slot />
+</section>

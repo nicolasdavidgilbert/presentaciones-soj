@@ -1,0 +1,15 @@
+---
+import Slide from '../components/presentation/Slide.astro';
+import { meta } from '../data/content';
+---
+
+<Slide theme="space" scene="outro" title="Cierre">
+  <div class="absolute inset-37.5 flex flex-col items-center justify-center text-center">
+    <p class="kicker text-leaf" data-a="fade">Sostenibilidad y desarrollo sostenible</p>
+    <h2 class="font-display uppercase text-[260px] leading-[0.9] mt-5" data-a="words">Gracias</h2>
+    <p class="font-serif italic text-[46px] mt-5 opacity-90" data-a="up">El cambio global empieza por lo local.</p>
+    <div class="h-0.75 w-50 bg-sun mt-12" data-a="line"></div>
+    <p class="mt-10 font-serif text-[32px] opacity-80" data-a="fade">{meta.authors.join(' · ')}</p>
+    <p class="mt-3.5 text-[20px] font-semibold tracking-[0.2em] uppercase opacity-60" data-a="fade">{meta.course}</p>
+  </div>
+</Slide>
